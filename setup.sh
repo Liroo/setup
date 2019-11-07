@@ -40,9 +40,9 @@ sudo apt install code
 
 # terminator
 green "installing terminator..."
-sudo add-apt-repository ppa:gnome-terminator
+sudo add-apt-repository ppa:gnome-terminator -y
 sudo apt-get update
-sudo apt-get -y install terminator
+sudo apt-get install -y terminator
 
 # google chrome
 green "installing google chrome..."
