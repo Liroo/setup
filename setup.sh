@@ -16,11 +16,12 @@ green "You are root!"
 # basics
 green "installing zsh, git, emacs..."
 sudo apt install software-properties-common apt-transport-https wget
-sudo apt-get install -y zsh git emacs openssh-server curl
+sudo apt-get install -y zsh git emacs openssh-server curl net-tools
 
 # ohmyzsh
 green "installing ohmyzsh..."
 0>/dev/null sh -c "$(wget -O- https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+chsh -s $(which zsh)
 
 # nodejs
 green "installing nodejs..."
