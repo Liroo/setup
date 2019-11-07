@@ -15,7 +15,8 @@ green "You are root!"
 
 # basics
 green "installing zsh, git, emacs..."
-sudo apt-get install zsh git emacs openssh-server
+sudo apt install software-properties-common apt-transport-https wget
+sudo apt-get install zsh git emacs openssh-server curl
 
 # ohmyzsh
 green "installing ohmyzsh..."
@@ -29,6 +30,12 @@ sudo apt-get install -y nodejs
 # yarn
 green "installing yarn..."
 curl -o- -L https://yarnpkg.com/install.sh
+
+# visual studio code
+wget -q https://packages.microsoft.com/keys/microsoft.asc -O- | sudo apt-key add -
+sudo add-apt-repository "deb [arch=amd64] https://packages.microsoft.com/repos/vscode stable main"
+sudo apt update
+sudo apt install code
 
 # google chrome
 green "installing google chrome..."
