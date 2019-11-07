@@ -16,7 +16,7 @@ green "You are root!"
 # basics
 green "installing zsh, git, emacs..."
 sudo apt install software-properties-common apt-transport-https wget
-sudo apt-get install zsh git emacs openssh-server curl
+sudo apt-get install -y zsh git emacs openssh-server curl
 
 # ohmyzsh
 green "installing ohmyzsh..."
@@ -32,15 +32,23 @@ green "installing yarn..."
 curl -o- -L https://yarnpkg.com/install.sh
 
 # visual studio code
+green "installing visual studio code..."
 wget -q https://packages.microsoft.com/keys/microsoft.asc -O- | sudo apt-key add -
 sudo add-apt-repository "deb [arch=amd64] https://packages.microsoft.com/repos/vscode stable main"
 sudo apt update
 sudo apt install code
 
+# terminator
+green "installing terminator..."
+sudo add-apt-repository ppa:gnome-terminator
+sudo apt-get update
+sudo apt-get -y install terminator
+
 # google chrome
 green "installing google chrome..."
 wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
 sudo dpkg -i google-chrome-stable_current_amd64.deb
+rm google-chrome-stable_current_amd64.deb
 
 # emacs rc
 green "configuring emacs..."
